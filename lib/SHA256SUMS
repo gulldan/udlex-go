@@ -1,0 +1,5 @@
+e545d3981286a9634720d19361041dc50a622f58d5774f17f2973d5cc06da769  lib/darwin-amd64/libudlex_capi.a
+d28e818ef13cfa4044c452c87716b0546466de19436c0de87232a23381813718  lib/darwin-arm64/libudlex_capi.a
+11ab52df95e39a6fbe1ead0ba0fc4958e39932f081568e307554510727d17c61  lib/linux-amd64/libudlex_capi.a
+cc0a3711090f6b5afa1048494902bdd1d9708a05e691e01d75f9d69a7dd5cd1d  lib/linux-arm64/libudlex_capi.a
+89ffb4f2f7bdb24ceeda7aeb836fc71dc06c08681833587cbba512262769268f  lib/linux-musl-amd64/libudlex_capi.a

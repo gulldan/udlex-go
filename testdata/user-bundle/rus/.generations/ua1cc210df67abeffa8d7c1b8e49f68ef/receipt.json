@@ -1,0 +1,19 @@
+{
+  "schema": "udlex-user-dictionary/v1",
+  "generation": "ua1cc210df67abeffa8d7c1b8e49f68ef",
+  "iso639_3": "rus",
+  "operation": "set",
+  "previous_generation": "ud840b5d9f5ac5ef0fe3a8cb4e23b67d9",
+  "rollback_from": null,
+  "actor": "go-fixture",
+  "reason": "lower override fixture",
+  "timestamp_unix_ms": 1787585906441,
+  "changes": [
+    {
+      "key": "дашборды",
+      "match": "lower",
+      "old": null,
+      "new": "ручнойдашборд"
+    }
+  ]
+}

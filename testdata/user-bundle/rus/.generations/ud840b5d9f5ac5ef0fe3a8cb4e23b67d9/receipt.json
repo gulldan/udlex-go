@@ -1,0 +1,19 @@
+{
+  "schema": "udlex-user-dictionary/v1",
+  "generation": "ud840b5d9f5ac5ef0fe3a8cb4e23b67d9",
+  "iso639_3": "rus",
+  "operation": "set",
+  "previous_generation": null,
+  "rollback_from": null,
+  "actor": "go-fixture",
+  "reason": "identity override fixture",
+  "timestamp_unix_ms": 1787585906392,
+  "changes": [
+    {
+      "key": "котами",
+      "match": "exact",
+      "old": null,
+      "new": "котами"
+    }
+  ]
+}

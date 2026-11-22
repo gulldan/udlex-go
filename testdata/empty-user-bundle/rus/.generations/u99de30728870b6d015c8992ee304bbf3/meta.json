@@ -1,0 +1,36 @@
+{
+  "schema": "udlex-user-dictionary/v1",
+  "iso639_3": "rus",
+  "generation": "u99de30728870b6d015c8992ee304bbf3",
+  "normalization": "NFC+locale-v1",
+  "casing": "icu-locale-v1",
+  "codec": "map",
+  "entries": {
+    "exact": 0,
+    "lower": 0,
+    "total": 0,
+    "strings": 0
+  },
+  "files": {
+    "entries.tsv": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "receipt.json": {
+      "size": 311,
+      "sha256": "f70504d18e65236f7a650c4c94c8582b84146516b17ac1c976ae445c5fee496d"
+    },
+    "strings.idx": {
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    "strings.txt": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "user.map": {
+      "size": 39,
+      "sha256": "037bb2d762b9fe609608d11f8c665ab3aad3dcb3936ead915e6618c7c82d48f9"
+    }
+  }
+}

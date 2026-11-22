@@ -1,0 +1,10 @@
+dist/
+bundle/
+.write.lock
+native/target/
+.DS_Store
+.env
+.env.*
+.netrc
+*.pem
+*.key

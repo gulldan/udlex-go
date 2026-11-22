@@ -1,0 +1,58 @@
+{
+ "name": "ru_sample",
+ "language": "Russian",
+ "iso639_3": "rus",
+ "source": "ru_sample.train",
+ "training_tokens": 9,
+ "variant": "full",
+ "selected_on": null,
+ "max_suffix": 6,
+ "format_version": 5,
+ "entity_encoding": "namespaced-v1",
+ "generation": "g70c9ca67cdcfba2a5cf160c44cf430449e31861ccbda2b867dd3d3000f0e8c21",
+ "normalization": "NFC+locale-v1",
+ "files": {
+  "entities.da": {
+   "size": 2048,
+   "sha256": "762d3196d34ab0a97a9c9b406516179932eb44520f292a099a06e5ec63f249df"
+  },
+  "exact.hybrid": {
+   "size": 1282,
+   "sha256": "7a7a9344145a5ddbd1fdf5846984af6e5012b7a8dd862cf1567e69b896ee3560"
+  },
+  "lower.hybrid": {
+   "size": 192,
+   "sha256": "93ef3bdfa21160282d5ebfcd03c448003a3592c75b84e4abad68783f6600b384"
+  },
+  "strings.idx": {
+   "size": 52,
+   "sha256": "597703032228f16a41c7415deb3837323f2d9f413cd17037e78a6de9cce5c679"
+  },
+  "strings.txt": {
+   "size": 268,
+   "sha256": "30f7e3e5b8ed51da95b994326bc9ecad13991656782c7489b1581566cba23796"
+  }
+ },
+ "codecs": {
+  "exact": "hybrid",
+  "lower": "hybrid",
+  "entities": "da"
+ },
+ "entries": {
+  "exact": 9,
+  "lower": 1,
+  "external": 0,
+  "entities": 12,
+  "phrases": 0,
+  "rules": 0,
+  "strings": 12
+ },
+ "traffic": {},
+ "gold_tokens": null,
+ "accuracy": null,
+ "baseline": null,
+ "beats_baseline": null,
+ "selection": null,
+ "span_case": "verbatim",
+ "span_multiword": "compose"
+}

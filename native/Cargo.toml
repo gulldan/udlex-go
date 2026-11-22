@@ -1,0 +1,27 @@
+[package]
+name = "udlex-go-capi"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.89"
+description = "C ABI for the udlex Go binding"
+license = "MIT"
+repository = "https://github.com/gulldan/udlex-go"
+publish = false
+
+[lib]
+name = "udlex_capi"
+crate-type = ["staticlib"]
+
+[dependencies]
+udlex-rs = { git = "https://github.com/gulldan/udlex.git", rev = "4f8494f7f8d3066d2d366259cc2a12e0145f051f", default-features = false, features = ["infer"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "forbid"
+missing_docs = "warn"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = "debuginfo"

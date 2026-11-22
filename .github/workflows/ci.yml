@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            libc: glibc
+          - os: ubuntu-24.04-arm
+            libc: glibc
+          - os: ubuntu-24.04
+            libc: musl
+          - os: macos-15
+            libc: system
+          - os: macos-15-intel
+            libc: system
+    env:
+      CGO_ENABLED: '1'
+      GOEXPERIMENT: cgocheck2
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.27.4'
+          cache: false
+      - name: Test Go with the native library
+        if: matrix.libc != 'musl'
+        run: go test -mod=readonly -race ./...
+      - name: Test Go with musl
+        if: matrix.libc == 'musl'
+        run: |
+          docker run --rm --security-opt no-new-privileges \
+            --mount "type=bind,src=$PWD,dst=/src,readonly" \
+            --mount "type=bind,src=$(go env GOROOT),dst=/go-toolchain,readonly" \
+            --workdir /src -e CGO_ENABLED -e GOEXPERIMENT -e GOPROXY=off \
+            alpine:3.24.4@sha256:f59abe656b692d901e184be3445e084786602108599d2a51d229c0f5a48c71bf \
+            sh -ec 'apk add --no-cache build-base; /go-toolchain/bin/go test -mod=readonly -tags musl ./...'
+
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check native archives
+        run: |
+          sha256sum --check --strict lib/SHA256SUMS
+          if grep -aqE '/Users/|/home/|/root/\.cargo/|/private/tmp/' lib/*/*.a; then
+            echo 'A native archive contains a build path.' >&2
+            exit 1
+          fi
+      - name: Scan history for secrets
+        run: |
+          archive="$RUNNER_TEMP/gitleaks.tar.gz"
+          curl --fail --silent --show-error --retry 3 --location --proto '=https' --proto-redir '=https' \
+            https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz \
+            --output "$archive"
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  $archive" | sha256sum --check --strict
+          tar -xzf "$archive" -C "$RUNNER_TEMP" gitleaks
+          "$RUNNER_TEMP/gitleaks" git --redact --no-banner --log-opts='--all' .

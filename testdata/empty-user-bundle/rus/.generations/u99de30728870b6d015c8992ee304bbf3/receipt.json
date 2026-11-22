@@ -1,0 +1,12 @@
+{
+  "schema": "udlex-user-dictionary/v1",
+  "generation": "u99de30728870b6d015c8992ee304bbf3",
+  "iso639_3": "rus",
+  "operation": "init",
+  "previous_generation": null,
+  "rollback_from": null,
+  "actor": "go-fixture",
+  "reason": "empty layer fixture",
+  "timestamp_unix_ms": 1787587059576,
+  "changes": []
+}
