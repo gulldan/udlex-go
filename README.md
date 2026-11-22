@@ -10,7 +10,7 @@ a Rust core through cgo. [Python package and Rust core](https://github.com/gulld
 Add the package to your project.
 
 ```sh
-go get github.com/gulldan/udlex-go@v1.0.0
+go get github.com/gulldan/udlex-go@v1.0.1
 ```
 
 Use Go 1.24 or later, a C compiler and `CGO_ENABLED=1`. The module includes

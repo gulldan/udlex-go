@@ -10,7 +10,7 @@
 运行以下命令将包添加到项目。
 
 ```sh
-go get github.com/gulldan/udlex-go@v1.0.0
+go get github.com/gulldan/udlex-go@v1.0.1
 ```
 
 需要 Go 1.24 或更高版本、C 编译器以及 `CGO_ENABLED=1`。模块包含 Linux 和 macOS

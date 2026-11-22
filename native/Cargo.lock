@@ -386,7 +386,7 @@ checksum = "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20"
 
 [[package]]
 name = "udlex-go-capi"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "serde",
  "serde_json",
@@ -395,8 +395,8 @@ dependencies = [
 
 [[package]]
 name = "udlex-rs"
-version = "1.0.0"
-source = "git+https://github.com/gulldan/udlex.git?rev=4f8494f7f8d3066d2d366259cc2a12e0145f051f#4f8494f7f8d3066d2d366259cc2a12e0145f051f"
+version = "1.0.1"
+source = "git+https://github.com/gulldan/udlex.git?rev=b8c6bf2a124b94e0237b482974cb149c43669d18#b8c6bf2a124b94e0237b482974cb149c43669d18"
 dependencies = [
  "fst",
  "icu_casemap",

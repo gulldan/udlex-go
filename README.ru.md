@@ -10,7 +10,7 @@
 Добавьте пакет в проект.
 
 ```sh
-go get github.com/gulldan/udlex-go@v1.0.0
+go get github.com/gulldan/udlex-go@v1.0.1
 ```
 
 Нужны Go 1.24 или новее, компилятор C и `CGO_ENABLED=1`. Модуль содержит
